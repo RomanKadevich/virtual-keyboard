@@ -5,7 +5,7 @@
     position: relative;
     top:10vh;
     padding: 28px 20px;
-    max-width: 741px;
+    max-width: 761px;
     margin: 0 auto;
     height: 406px;
     background: linear-gradient(180deg, #001CBA -61.58%, #000000 100%);
@@ -20,6 +20,9 @@
 
     }
     &__key{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 10px;
         width: 40px;
         height: 40px;
@@ -28,5 +31,17 @@
         border-radius: 4px;
         font-size: 1em;
         color:#FFFFFF;
+    }
+    &__key_size{
+        width: 102px;
+    }
+    &__key_bs-size{
+        width: 326px;
+    }
+    &__key_color{
+        background: #1C232E;
+    }
+    &__key_active{
+        color: #5B70E6;
     }
 }
