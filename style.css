@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+.info {
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  min-width: 762px;
 }
 
 .keyboard {
@@ -19,6 +30,9 @@
   height: 100px;
   margin-bottom: 15px;
   border-radius: 4px;
+  resize: none;
+  overflow-y: scroll;
+  white-space: pre-wrap;
 }
 .keyboard__keyfield {
   display: flex;
