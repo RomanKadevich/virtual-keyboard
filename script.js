@@ -1,28 +1,8 @@
 // 14, 15, 29, 30, 42, 43, 55-59, 61-65 - color
 // 14, 30, 42, 43, 55 - size
 //функция создает верстку клавиатуры в блоке HTML, используя массив из ключей клавиш 
-function creatKeyboard(arrOfKeys, htmlFieldElement) {
-    for (let i = 0; i < arrOfKeys.length; i++) {
-
-        if ((i === 14) || (i === 28) || ((i >= 54) && (i <= 58)) ||
-            ((i >= 60) && (i <= 64))) {
-            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color' id = 'key'>" + arrOfKeys[i] + "</div>"
-        } else if ((i === 13) || (i === 29) || (i === 41) || (i === 42) ||
-            (i === 54) || (i === 42) || ((i >= 54) && (i <= 58)) ||
-            ((i >= 60) && (i <= 64))) {
-            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color keyboard__key_size' id = 'key'>" + arrOfKeys[i] + "</div>"
-
-        } else if (i === 59) {
-            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_bs-size' id = 'key'>" + arrOfKeys[i] + "</div>"
-
-        } else {
-            htmlFieldElement.innerHTML += "<div class = 'keyboard__key' id = 'key'>" + arrOfKeys[i] + "</div>"
-        }
-
-
-    }
-    let keys = document.querySelectorAll('#key');
-    for (key of keys) {
+function changeNameKeys(keys){
+    for (let key of keys) {
         switch (key.textContent) {
             case 'Delete':
                 key.textContent = 'DEL';
@@ -66,24 +46,133 @@ function creatKeyboard(arrOfKeys, htmlFieldElement) {
         }
     }
 }
+function creatRusKeyboard(arrOfKeys, htmlFieldElement) {
+    for (let i = 0; i < arrOfKeys.length; i++) {
+
+        if ((i === 14) || (i === 28) || ((i >= 54) && (i <= 58)) ||
+            ((i >= 60) && (i <= 64))) {
+            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color' id = 'key' data =" + `${i}` + ">" + arrOfKeys[i] + "</div>"
+        } else if ((i === 13) || (i === 29) || (i === 41) || (i === 42) ||
+            (i === 54) || (i === 42) || ((i >= 54) && (i <= 58)) ||
+            ((i >= 60) && (i <= 64))) {
+            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color keyboard__key_size' id = 'key' data =" + `${i}` + ">" + arrOfKeys[i] + "</div>"
+
+        } else if (i === 59) {
+            htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_bs-size' id = 'key' data =" + `${i}` + ">" + arrOfKeys[i] + "</div>"
+
+        } else {
+            htmlFieldElement.innerHTML += "<div class = 'keyboard__key' id = 'key' data =" + `${i}` + ">" + arrOfKeys[i] + "</div>"
+        }
+
+
+    }
+    let keys = document.querySelectorAll('#key');
+    changeNameKeys(keys)
+}
+    function creatEngKeyboard(arrOfKeys, htmlFieldElement) {
+        for (let i = 0; i < arrOfKeys.length; i++) {
+    
+            if ((i === 14) || (i === 28) || ((i >= 54) && (i <= 58)) ||
+                ((i >= 60) && (i <= 64))) {
+                htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color' id = 'key' data =" + '0'+`${i}` + ">" + arrOfKeys[i] + "</div>"
+            } else if ((i === 13) || (i === 29) || (i === 41) || (i === 42) ||
+                (i === 54) || (i === 42) || ((i >= 54) && (i <= 58)) ||
+                ((i >= 60) && (i <= 64))) {
+                htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_color keyboard__key_size' id = 'key' data =" + '0'+`${i}` + ">" + arrOfKeys[i] + "</div>"
+    
+            } else if (i === 59) {
+                htmlFieldElement.innerHTML += "<div class = 'keyboard__key keyboard__key_bs-size' id = 'key' data =" + '0'+`${i}` + ">" + arrOfKeys[i] + "</div>"
+    
+            } else {
+                htmlFieldElement.innerHTML += "<div class = 'keyboard__key' id = 'key' data =" + '0'+`${i}` + ">" + arrOfKeys[i] + "</div>"
+            }
+    
+    
+        }
+    
+    let keys = document.querySelectorAll('#key');
+    changeNameKeys(keys)
+    }
 // создал массив event.key русскоязычной клавиатуры
 const pressedRusKeys = ['Ё', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=',
     'Backspace', 'Tab', 'Й', 'Ц', 'У', 'К', 'Е', 'Н', 'Г', 'Ш', 'Щ', 'З', 'Х', 'Ъ', '\\',
     'Delete', 'CapsLock', 'Ф', 'Ы', 'В', 'А', 'П', 'Р', 'О', 'Л', 'Д', 'Ж', 'Э', 'Enter',
     'Shift', '/', 'Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю', '.', 'ArrowUp', 'Shift',
-    'Control', 'Meta', 'Alt', '(blank space)', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
-const pressedEngKeys  = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=',
-'Backspace', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
-'Delete', 'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', `'`, 'Enter',
-'Shift', '/', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'ArrowUp', 'Shift',
-'Control', 'Meta', 'Alt', '(blank space)', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
-let keyboard = document.createElement('div');
+    'Control', 'Meta', 'Alt', ' ', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+const pressedEngKeys = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=',
+    'Backspace', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\',
+    'Delete', 'CapsLock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', `'`, 'Enter',
+    'Shift', '/', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'ArrowUp', 'Shift',
+    'Control', 'Meta', 'Alt', ' ', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
+const keyboard = document.createElement('div');
 keyboard.className = 'keyboard';
-keyboard.innerHTML = '<div id="textarea"></div><div id="keyfield"></div>';
+keyboard.innerHTML = '<input type="textarea" id="textarea"></input><div id="keyfield-rus"></div><div id="keyfield-eng"></div>';
 document.body.append(keyboard);
-let textArea = document.getElementById('textarea');
-let keyField = document.getElementById('keyfield');
-keyField.className = 'keyboard__keyfield'
-creatKeyboard(pressedEngKeys, keyField);
+const textArea = document.getElementById('textarea');
+textArea.className = "keyboard__textarea"
+const keyFieldRus = document.getElementById('keyfield-rus');
+keyFieldRus.className = 'keyboard__keyfield'
+const keyFieldEng = document.getElementById('keyfield-eng');
+keyFieldEng.className = 'keyboard__keyfield keyboard__keyfield_disable';
+creatRusKeyboard(pressedRusKeys, keyFieldRus);
 
 
+addEventListener('click', () => {
+    keyFieldEng.classList.toggle('keyboard__keyfield_disable');
+    keyFieldRus.classList.toggle('keyboard__keyfield_disable');
+    if (!keyFieldEng.innerHTML) {
+        creatEngKeyboard(pressedEngKeys, keyFieldEng);
+        keyFieldRus.innerHTML = '';
+    }
+    else {
+        creatRusKeyboard(pressedRusKeys, keyFieldRus);
+        keyFieldEng.innerHTML = '';
+    }
+
+})
+function highlight(el) {
+    el.classList.add('keyboard__key_active');
+}
+function cancelHighlight(el) {
+    el.classList.remove('keyboard__key_active');
+}
+
+const highlightRusKey = (event) =>{
+    for (let item of pressedRusKeys) {
+        if (event.key === item) {
+            let indexOfKey = pressedRusKeys.indexOf(item);
+             highlight(document.querySelector('[data =' + '"' + `${indexOfKey}` + '"' + ']'));
+        }
+    }
+};
+const cancelHighlightRusKey = (event) =>{
+    for (let item of pressedRusKeys) {
+        if (event.key === item) {
+            let indexOfKey = pressedRusKeys.indexOf(item);
+             cancelHighlight(document.querySelector('[data =' + '"' + `${indexOfKey}` + '"' + ']'));
+        }
+    }
+};
+const highlightEngKey = (event) =>{
+    for (let item of pressedEngKeys) {
+        if (event.key === item) {
+            let indexOfKey = pressedEngKeys.indexOf(item);
+             highlight(document.querySelector('[data =' + '"' +'0'+`${indexOfKey}` + '"' + ']'));
+        }
+    }
+};
+const cancelHighlightEngKey = (event) =>{
+    for (let item of pressedEngKeys) {
+        if (event.key === item) {
+            let indexOfKey = pressedEngKeys.indexOf(item);
+         cancelHighlight(document.querySelector('[data =' + '"'+'0'+ `${indexOfKey}` + '"' + ']'));
+        }
+    }
+};
+
+document.addEventListener('keydown', highlightRusKey);
+document.addEventListener('keyup', cancelHighlightRusKey)
+
+
+document.addEventListener('keydown', highlightEngKey);
+document.addEventListener('keyup', cancelHighlightEngKey)

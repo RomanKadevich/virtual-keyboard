@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -11,6 +12,13 @@
   height: 406px;
   background: linear-gradient(180deg, #001CBA -61.58%, #000000 100%);
   border-radius: 10px;
+  font-family: "Inter", sans-serif;
+}
+.keyboard__textarea {
+  width: 721px;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 4px;
 }
 .keyboard__keyfield {
   display: flex;
@@ -18,6 +26,12 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 6px;
+}
+.keyboard__keyfield_disable {
+  display: none;
+}
+.keyboard__keyfield_active {
+  display: flex;
 }
 .keyboard__key {
   display: flex;
@@ -30,7 +44,12 @@
   filter: drop-shadow(3px 3px 5px #8BB3EF);
   border-radius: 4px;
   font-size: 1em;
+  font-weight: 500;
   color: #FFFFFF;
+  cursor: pointer;
+}
+.keyboard__key:hover {
+  filter: drop-shadow(3px 3px 5px #ffffff);
 }
 .keyboard__key_size {
   width: 102px;
@@ -40,7 +59,11 @@
 }
 .keyboard__key_color {
   background: #1C232E;
+  filter: drop-shadow(3px 3px 5px #0020D1);
+}
+.keyboard__key_color:hover {
+  filter: drop-shadow(3px 3px 5px #6e81ec);
 }
 .keyboard__key_active {
-  color: #5B70E6;
+  background: #5B70E6;
 }/*# sourceMappingURL=style.css.map */
