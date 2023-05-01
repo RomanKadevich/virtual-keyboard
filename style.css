@@ -47,9 +47,13 @@
   font-weight: 500;
   color: #FFFFFF;
   cursor: pointer;
+  transition: background-color 300ms ease-in-out, filter 400ms ease-in-out;
 }
 .keyboard__key:hover {
   filter: drop-shadow(3px 3px 5px #ffffff);
+}
+.keyboard__key:active {
+  background-color: #5B70E6;
 }
 .keyboard__key_size {
   width: 102px;
@@ -65,5 +69,6 @@
   filter: drop-shadow(3px 3px 5px #6e81ec);
 }
 .keyboard__key_active {
-  background: #5B70E6;
+  transition: background-color 400ms ease-in-out;
+  background-color: #5B70E6;
 }/*# sourceMappingURL=style.css.map */

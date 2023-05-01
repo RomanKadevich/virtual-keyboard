@@ -53,8 +53,15 @@
         font-weight: 500;
         color: #FFFFFF;
         cursor: pointer;
-        &:hover{
+        transition: background-color 300ms ease-in-out, filter 400ms ease-in-out;
+
+        &:hover {
             filter: drop-shadow(3px 3px 5px #ffffff);
+        }
+
+        &:active {
+
+            background-color: #5B70E6;
         }
     }
 
@@ -70,13 +77,15 @@
     &__key_color {
         background: #1C232E;
         filter: drop-shadow(3px 3px 5px #0020D1);
-        &:hover{
+
+        &:hover {
             filter: drop-shadow(3px 3px 5px #6e81ec);
         }
     }
-    
+
 
     &__key_active {
-        color: #5B70E6;
+        transition: background-color 400ms ease-in-out;
+        background-color: #5B70E6;
     }
 }
