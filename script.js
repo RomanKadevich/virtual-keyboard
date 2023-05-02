@@ -113,7 +113,7 @@ function addInputText(keys, textarea) {
       if (((event.key === item) || (event.key === item.toLowerCase())) && (event.key !== 'Backspace')
                 && (event.key !== 'Delete') && (event.key !== 'Enter')
                 && (event.key !== 'CapsLock') && (event.key !== 'ArrowRight') && (event.key !== 'ArrowLeft')
-                && (event.key !== 'ArrowDown') && (event.key !== 'ArrowUp') && (event.key !== 'Shift') && (event.key !== 'Alt') && (event.key !== 'Control')) {
+                && (event.key !== 'Shift') && (event.key !== 'Alt') && (event.key !== 'Control')) {
         character = event.key;
       }
       if (!event.getModifierState('CapsLock')) {
@@ -124,7 +124,7 @@ function addInputText(keys, textarea) {
       if (((event.key === item) || (event.key === item.toLowerCase()))  && (event.key !== 'Backspace')
                 && (event.key !== 'Delete') && (event.key !== 'Enter')
                 && (event.key !== 'CapsLock') && (event.key !== 'ArrowRight') && (event.key !== 'ArrowLeft')
-                && (event.key !== 'ArrowDown') && (event.key !== 'ArrowUp') && (event.key !== 'Shift') && (event.key !== 'Alt') && (event.key !== 'Control')) {
+                && (event.key !== 'Shift') && (event.key !== 'Alt') && (event.key !== 'Control')) {
         character = event.key;
       }
       if (!event.getModifierState('CapsLock')) {
