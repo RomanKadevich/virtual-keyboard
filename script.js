@@ -179,7 +179,7 @@ const pressedEngKeys = ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '
   'Shift', '/', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'ArrowUp', 'Shift',
   'Control', 'Meta', 'Alt', ' ', 'Alt', 'Control', 'ArrowLeft', 'ArrowDown', 'ArrowRight'];
 const info = document.createElement('p');
-info.textContent = 'Смена языка клавиатуры: alt + shift';
+info.textContent = 'Смена языка клавиатуры: alt + shift;  OC: WINDOWS';
 document.body.append(info);
 info.className = 'info';
 const keyboard = document.createElement('div');
