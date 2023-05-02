@@ -121,7 +121,7 @@ function addInputText(keys, textarea) {
       }
     }
     for (const item of pressedEngKeys) {
-      if ((event.key === item) && (event.key !== 'Backspace')
+      if (((event.key === item) || (event.key === item.toLowerCase()))  && (event.key !== 'Backspace')
                 && (event.key !== 'Delete') && (event.key !== 'Enter')
                 && (event.key !== 'CapsLock') && (event.key !== 'ArrowRight') && (event.key !== 'ArrowLeft')
                 && (event.key !== 'ArrowDown') && (event.key !== 'ArrowUp') && (event.key !== 'Shift') && (event.key !== 'Alt') && (event.key !== 'Control')) {
@@ -215,7 +215,7 @@ function cancelHighlight(el) {
 
 const highlightRusKey = (event) => {
   for (const item of pressedRusKeys) {
-    if (event.key === item) {
+    if  ((event.key === item) || (event.key === item.toLowerCase()))  {
       const indexOfKey = pressedRusKeys.indexOf(item);
       highlight(document.querySelector('[data =' + '"' + `${indexOfKey}` + '"' + ']'));
     }
@@ -223,7 +223,7 @@ const highlightRusKey = (event) => {
 };
 const cancelHighlightRusKey = (event) => {
   for (const item of pressedRusKeys) {
-    if (event.key === item) {
+    if ((event.key === item) || (event.key === item.toLowerCase()))  {
       const indexOfKey = pressedRusKeys.indexOf(item);
       cancelHighlight(document.querySelector('[data =' + '"' + `${indexOfKey}` + '"' + ']'));
     }
@@ -231,7 +231,7 @@ const cancelHighlightRusKey = (event) => {
 };
 const highlightEngKey = (event) => {
   for (const item of pressedEngKeys) {
-    if (event.key === item) {
+    if ((event.key === item) || (event.key === item.toLowerCase()))  {
       const indexOfKey = pressedEngKeys.indexOf(item);
       highlight(document.querySelector('[data =' + '"' + '0' + `${indexOfKey}` + '"' + ']'));
     }
@@ -239,7 +239,7 @@ const highlightEngKey = (event) => {
 };
 const cancelHighlightEngKey = (event) => {
   for (const item of pressedEngKeys) {
-    if (event.key === item) {
+    if ((event.key === item) || (event.key === item.toLowerCase()))  {
       const indexOfKey = pressedEngKeys.indexOf(item);
       cancelHighlight(document.querySelector('[data =' + '"' + '0' + `${indexOfKey}` + '"' + ']'));
     }
