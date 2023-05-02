@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+.info {
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 762px;
+}
+
+.keyboard {
+  position: relative;
+  top: 10vh;
+  padding: 28px 20px;
+  max-width: 761px;
+  margin: 0 auto;
+  height: 406px;
+  background: linear-gradient(180deg, #001CBA -61.58%, #000000 100%);
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+}
+.keyboard__textarea {
+  width: 721px;
+  height: 100px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  resize: none;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+}
+.keyboard__keyfield {
+  display: flex;
+  max-height: 240px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.keyboard__keyfield_disable {
+  display: none;
+}
+.keyboard__keyfield_active {
+  display: flex;
+}
+.keyboard__key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  background: #3A424E;
+  filter: drop-shadow(3px 3px 5px #8BB3EF);
+  border-radius: 4px;
+  font-size: 1em;
+  font-weight: 500;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color 300ms ease-in-out, filter 400ms ease-in-out;
+}
+.keyboard__key:hover {
+  filter: drop-shadow(3px 3px 5px #ffffff);
+}
+.keyboard__key:active {
+  background-color: #5B70E6;
+}
+.keyboard__key_size {
+  width: 102px;
+}
+.keyboard__key_bs-size {
+  width: 326px;
+}
+.keyboard__key_color {
+  background: #1C232E;
+  filter: drop-shadow(3px 3px 5px #0020D1);
+}
+.keyboard__key_color:hover {
+  filter: drop-shadow(3px 3px 5px #6e81ec);
+}
+.keyboard__key_active {
+  transition: background-color 400ms ease-in-out;
+  background-color: #5B70E6;
+}/*# sourceMappingURL=style.css.map */
